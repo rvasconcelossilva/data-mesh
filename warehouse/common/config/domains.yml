@@ -1,0 +1,13 @@
+domains:
+  strava:
+    type: "source"
+    description: "This domain stores data from Strava Accounts"
+  instagram:
+    type: "source"
+    description: "This domain stores data from Instagram Accounts"
+  user_sport_profile:
+     type: "aggregate"
+     description: "This domain joins data from strava and instagram accounts"
+  user_sport_profile:
+     type: "analytics"
+     description: "This domain joins data from strava and instagram accounts"     
