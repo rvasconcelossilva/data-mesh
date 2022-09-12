@@ -1,0 +1,48 @@
+name: Domain Request
+description: Request a domain creation to integrate with the data mesh.
+title: "[Domain Request]: "
+labels: ["domain", "request", "data mesh"]
+assignees:
+  - octocat
+body:
+  - type: input
+    id: domain-name
+    attributes:
+      label: Domain Name
+      description: The name of your domain that will be used to create your resouces.
+      placeholder: ex. user or user-purchases
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type
+      description: What is the domain type that is going to be created
+      options:
+        - Source-aligned
+        - Agregate-aligned
+        - Consumer-aligned
+    validations:
+      required: true
+  - type: textarea
+    id: owners
+    attributes:
+      label: Data Product Owners
+      description: "List the owners of this domain"
+      value: |
+        - email@domain.com
+        - email2@domain
+      render: yaml
+    validations:
+      required: true
+  - type: textarea
+    id: developers
+    attributes:
+      label: Data Product Developers
+      description: "List the developers of this domain"
+      value: |
+        - email@domain.com
+        - email2@domain
+      render: yaml
+    validations:
+      required: true      
