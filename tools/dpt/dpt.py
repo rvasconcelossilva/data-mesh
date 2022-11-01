@@ -1,5 +1,6 @@
 import click
-from domain.App import App
+from domain.builders.ConsumerDomain import ConsumerDomain
+from domain.builders.ServiceDomain import ServiceDomain
 
 @click.group()
 def dpt():
@@ -8,7 +9,7 @@ def dpt():
 @click.command("install-domain")
 @click.option("--type", "-t", help="Type ")
 def instal_domain(type):
-    domain_app = App(type=type)
+    domain_app = ConsumerDomain() if type == "service" else ServiceDomain()
     domain_app.build()
 
 dpt.add_command(instal_domain)

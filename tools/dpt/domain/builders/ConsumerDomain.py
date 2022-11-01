@@ -1,4 +1,4 @@
-from abstract.DomainBuilderInterface import DomainBuilderInterface
+from domain.abstract.DomainBuilderInterface import DomainBuilderInterface
 
 class ConsumerDomain(DomainBuilderInterface):
 
