@@ -1,9 +1,16 @@
 # syntax=docker/dockerfile:1
 
-FROM python:3.9-slim-buster
+FROM python:3
 
-WORKDIR /app
+ARG gh_token
+ENV env_name $gh_token
 
-COPY requirements.txt requirements.txt
+WORKDIR /code
 
-RUN pip install -r requirements.txt
+RUN brew install gh
+
+RUN gh repo clone rvasconcelossilva/data-mesh
+
+WORKDIR /data-mesh
+
+RUN pipenv install
