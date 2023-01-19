@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 dbt-snowflake = "*"
 jinja2 = "*"
+pulumi = "*"
 
 [dev-packages]
 

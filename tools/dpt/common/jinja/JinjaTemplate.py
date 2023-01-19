@@ -1,7 +1,8 @@
 import string
 from jinja2 import Environment, FileSystemLoader
+from abc import ABC, abstractmethod
 
-class JinjaTemplate:
+class JinjaTemplate(ABC):
 
     def __init__(self, template_path, template_file) -> None:
         self.environment = Environment(loader=FileSystemLoader(template_path))
