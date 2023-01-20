@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM python:3
+FROM python:3.9
 
 RUN apt-get update && apt-get install -y git
 
@@ -10,12 +10,18 @@ RUN git clone https://github.com/rvasconcelossilva/data-mesh.git
 
 RUN pip install pipenv
 
-WORKDIR /data-mesh
+WORKDIR /code/data-mesh
 
 RUN pipenv install
 
-RUN uvicorn --help
+EXPOSE 80
 
-#CMD ["python3", "uvicorn", "main:app", "--reload", "--app-dir ./tools/dpt_api"]
+RUN pipenv run uvicorn tools.dpt_api.main:app --host 0.0.0.0 --port 8000
 
-EXPOSE 8000
+
+
+#RUN pip install --upgrade pip
+
+#RUN pip install -r requirements.txt
+
+#RUN ["uvicorn", "main:app", "--reload", "--app-dir ./tools/dpt_api"]
