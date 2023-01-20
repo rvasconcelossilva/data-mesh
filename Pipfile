@@ -7,6 +7,8 @@ name = "pypi"
 dbt-snowflake = "*"
 jinja2 = "*"
 pulumi = "*"
+fastapi = "*"
+uvicorn = {extras = ["standard"], version = "*"}
 
 [dev-packages]
 

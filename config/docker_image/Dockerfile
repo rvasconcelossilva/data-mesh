@@ -2,15 +2,14 @@
 
 FROM python:3
 
-ARG gh_token
-ENV env_name $gh_token
+RUN apt-get update && apt-get install -y git
 
 WORKDIR /code
 
-RUN brew install gh
+RUN git clone https://github.com/rvasconcelossilva/data-mesh.git
 
-RUN gh repo clone rvasconcelossilva/data-mesh
+RUN pip install pipenv
 
 WORKDIR /data-mesh
 
-RUN pipenv install
+RUN uvicorn --app-dir tool/dpt_api main:app --reload
