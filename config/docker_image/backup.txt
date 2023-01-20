@@ -13,7 +13,3 @@ RUN pip install pipenv
 WORKDIR /data-mesh
 
 RUN pipenv install
-
-RUN pipenv run uvicorn main:app --reload --app-dir ./tools/dpt_api
-
-EXPOSE 8000
