@@ -1,0 +1,8 @@
+version: '3'
+services:
+  mt_app:
+    image: rvasconcelossilva/data-mesh-tool:latest
+    build: ./docker_image
+
+#TODO: Create services for each environment (DEV, CI, PROD)
+#TODO: Make it more modular and reusable

@@ -12,13 +12,11 @@ RUN pip install pipenv
 
 WORKDIR /code/data-mesh
 
-RUN pipenv install
+RUN PIPENV_VENV_IN_PROJECT=1 pipenv install --system --deploy --ignore-pipfile
+
+CMD ["uvicorn", "tools.dpt_api.main:app", "--host", "0.0.0.0", "--port", "80"]
 
 EXPOSE 80
-
-RUN pipenv run uvicorn tools.dpt_api.main:app --host 0.0.0.0 --port 8000
-
-
 
 #RUN pip install --upgrade pip
 
