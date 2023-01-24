@@ -2,7 +2,7 @@
 
 FROM python:3.9
 
-RUN apt-get update && apt-get install -y git
+RUN apt-get update && apt-get install -y git && apt install zsh -y
 
 WORKDIR /code
 
@@ -14,12 +14,12 @@ WORKDIR /code/data-mesh
 
 RUN PIPENV_VENV_IN_PROJECT=1 pipenv install --system --deploy --ignore-pipfile
 
+RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+RUN cd /code/data-mesh
+
+RUN chsh -s $(which zsh)
+
 CMD ["uvicorn", "tools.dpt_api.main:app", "--host", "0.0.0.0", "--port", "80"]
 
 EXPOSE 80
-
-#RUN pip install --upgrade pip
-
-#RUN pip install -r requirements.txt
-
-#RUN ["uvicorn", "main:app", "--reload", "--app-dir ./tools/dpt_api"]
