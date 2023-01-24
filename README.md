@@ -15,8 +15,8 @@ Pre-requisites:
 
 1. [VS Code IDE](https://code.visualstudio.com/download)
 1. [Docker Extension for VS Code](https://code.visualstudio.com/docs/containers/overview)
-1. [Remote Explorer]
-1. [Remote Development]
+1. [Remote Explorer Extension] [comment]: <> (#TODO: add a link)
+1. [Remote Development Extension] [comment]: <> (#TODO: add a link)
 1. [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 1. [Register on Docker Hub](https://hub.docker.com/)
 
