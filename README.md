@@ -28,10 +28,10 @@ Step-by-step Installation:
 1. Open VS code and open the terminal (click on Terminal > New Terminal). [comment]: <> (#TODO: add a picture)
 1. Type the command `docker --version` and then hit `enter`. You should have a result like `Docker version 20.10.21, build baeda1f`. It means your Docker is working fine.
 1. Type `docker pull rvasconcelossilva/data-mesh-tool` and then hit `enter`. You will be able to see the image `rvasconcelossilva/data-mesh-tool` in the `Docker Desktop`.
-1. Back to VS Code, type `docker run --name dev rvasconcelossilva/data-mesh-tool`, it will create the container so you can contribute to the `data-mesh` project.
+1. Back to VS Code, type `docker run --name dev -p 8000:80 rvasconcelossilva/data-mesh-tool`, it will create the container so you can contribute to the `data-mesh` project.
 1. On VS Code, click on the left bottom corner, and select the option `Attach to Running Container...`, and the click on `/dev`. A new VS Code will pop up and the project will load.
 1. Click again in Terminal, and then new terminal.
-1. Open the brownser and access `http://127.0.0.1:8000/`.
+1. Open the brownser and access `http://0.0.0.0:8000/`.
 
 Done! You are good to go.
 
