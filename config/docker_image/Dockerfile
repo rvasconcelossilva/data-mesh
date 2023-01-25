@@ -16,10 +16,10 @@ RUN PIPENV_VENV_IN_PROJECT=1 pipenv install --system --deploy --ignore-pipfile
 
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-RUN cd /code/data-mesh
-
-RUN chsh -s $(which zsh)
-
-CMD ["uvicorn", "tools.dpt_api.main:app", "--host", "0.0.0.0", "--port", "80"]
+CMD ["uvicorn", "tools.dpt_api.main:app", "--host", "0.0.0.0", "--port", "8000"]
 
 EXPOSE 8000
+
+RUN cd /code/data-mesh
+
+RUN zsh
