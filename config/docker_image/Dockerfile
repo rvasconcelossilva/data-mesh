@@ -22,4 +22,4 @@ RUN chsh -s $(which zsh)
 
 CMD ["uvicorn", "tools.dpt_api.main:app", "--host", "0.0.0.0", "--port", "80"]
 
-EXPOSE 80
+EXPOSE 8000
