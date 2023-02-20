@@ -1,0 +1,8 @@
+export PULUMI_LOCAL_LOGIN=1
+export PULUMI_CONFIG_PASSPHRASE="123456"
+export PULUMI_HOME=$(git rev-parse --show-toplevel)"/.pulumi_artifacts"
+export SNOWFLAKE_USER=#add your user here
+export SNOWFLAKE_ROLE=#add the role here
+export SNOWFLAKE_ACCOUNT=#set the account here.
+
+pulumi login file://"$(git rev-parse --show-toplevel)"
