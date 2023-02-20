@@ -1,1 +1,12 @@
 *.cpython-39.pyc
+
+*.log
+
+*.envrc
+
+.pulumi/locks
+.pulumi/backups
+.pulumi/stacks/*.backups
+.pulumi/history
+.pulumi/stacks/*.baks.attrs
+.pulumi_artifacts/*

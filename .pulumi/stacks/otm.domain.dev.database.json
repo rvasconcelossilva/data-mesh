@@ -1,0 +1,73 @@
+{
+    "version": 3,
+    "checkpoint": {
+        "stack": "otm.domain.dev.database",
+        "latest": {
+            "manifest": {
+                "time": "2023-02-07T17:41:10.92721+11:00",
+                "magic": "375b9a4575c488972efc376a5a54ab60c43297fcce335704037cb8c668a4c864",
+                "version": "v3.53.1"
+            },
+            "secrets_providers": {
+                "type": "passphrase",
+                "state": {
+                    "salt": "v1:Lyy9OpieyJs=:v1:G7kR9Db8eYFN+5gh:WYagKeElpopRJMievt1AxB4VOHSl/g=="
+                }
+            },
+            "resources": [
+                {
+                    "urn": "urn:pulumi:otm.domain.dev.database::mesh::pulumi:pulumi:Stack::mesh-otm.domain.dev.database",
+                    "custom": false,
+                    "type": "pulumi:pulumi:Stack"
+                },
+                {
+                    "urn": "urn:pulumi:otm.domain.dev.database::mesh::pulumi:providers:snowflake::default_0_16_0",
+                    "custom": true,
+                    "id": "b0c47cb4-9462-47ad-bb31-0fc266b95833",
+                    "type": "pulumi:providers:snowflake",
+                    "inputs": {
+                        "account": "AZKQCOX-HZ25454",
+                        "browserAuth": "true",
+                        "role": "accountadmin",
+                        "username": "rvasconcelossilva",
+                        "version": "0.16.0"
+                    },
+                    "outputs": {
+                        "account": "AZKQCOX-HZ25454",
+                        "browserAuth": "true",
+                        "role": "accountadmin",
+                        "username": "rvasconcelossilva",
+                        "version": "0.16.0"
+                    }
+                },
+                {
+                    "urn": "urn:pulumi:otm.domain.dev.database::mesh::snowflake:index/database:Database::domain.dev.database",
+                    "custom": true,
+                    "id": "db_domain",
+                    "type": "snowflake:index/database:Database",
+                    "inputs": {
+                        "__defaults": [
+                            "comment",
+                            "isTransient"
+                        ],
+                        "comment": "",
+                        "isTransient": false,
+                        "name": "db_domain"
+                    },
+                    "outputs": {
+                        "comment": "",
+                        "dataRetentionTimeInDays": 1,
+                        "id": "db_domain",
+                        "isTransient": false,
+                        "name": "db_domain"
+                    },
+                    "parent": "urn:pulumi:otm.domain.dev.database::mesh::pulumi:pulumi:Stack::mesh-otm.domain.dev.database",
+                    "provider": "urn:pulumi:otm.domain.dev.database::mesh::pulumi:providers:snowflake::default_0_16_0::b0c47cb4-9462-47ad-bb31-0fc266b95833",
+                    "propertyDependencies": {
+                        "name": null
+                    }
+                }
+            ]
+        }
+    }
+}
