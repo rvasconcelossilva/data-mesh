@@ -1,0 +1,19 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://onetomany.com/snowflake.resources.schema.json",
+    "title": "Snowflake Resources File",
+    "description": "Configuration file to the Snowflake Resources",
+    "type": "object",
+    "properties": {
+        "databases": {
+            "description": "The unique identifier for a product",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                }
+            },
+            "required": ["name"]
+        }
+    }
+}

@@ -2,7 +2,7 @@
 
 *.log
 
-*.envrc
+.env*
 
 .pulumi/locks
 .pulumi/backups
